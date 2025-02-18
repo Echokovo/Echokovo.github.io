@@ -4,15 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>2025117 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Fake news, disinformation and misinformation in social media: a review了解了review的大体结构：总体上，先引入问题，再介绍各种定义（e.g.何为Fake news）及研究方法（e.g. 论文来源 论文筛选原则），再介绍解决方案，最后进行总结；在解决方案部分，先列举各种方向，对引用的论文中的实现方法的说明较为简短。Fake n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025117">
+<meta property="og:url" content="http://example.com/2025/02/18/2025-1-17/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Fake news, disinformation and misinformation in social media: a review了解了review的大体结构：总体上，先引入问题，再介绍各种定义（e.g.何为Fake news）及研究方法（e.g. 论文来源 论文筛选原则），再介绍解决方案，最后进行总结；在解决方案部分，先列举各种方向，对引用的论文中的实现方法的说明较为简短。Fake n">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/RAG_FrameCompre_eng.png">
+<meta property="og:image" content="http://example.com/rag_summary.png">
+<meta property="article:published_time" content="2025-02-18T15:52:30.000Z">
+<meta property="article:modified_time" content="2025-02-18T15:54:48.498Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/RAG_FrameCompre_eng.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,52 +76,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2025-1-22" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/02/18/2025-1-22/" class="article-date">
-  <time class="dt-published" datetime="2025-02-18T15:53:51.000Z" itemprop="datePublished">2025-02-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/18/2025-1-22/">2025-1-22</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Evaluating-Retrieval-Quality-in-Retrieval-Augmented-Generation"><a href="#Evaluating-Retrieval-Quality-in-Retrieval-Augmented-Generation" class="headerlink" title="Evaluating Retrieval Quality in Retrieval-Augmented Generation"></a><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/abs/10.1145/3626772.3657957">Evaluating Retrieval Quality in Retrieval-Augmented Generation</a></h1><h2 id="本文介绍了一种评估RAG检索模型表现的方法eRAG，传统的end-to-end方法缺乏可解释性且需要较大资源，eRAG能节约50倍的显存并且与模型性能相关性更高（即该评估方法更好）。"><a href="#本文介绍了一种评估RAG检索模型表现的方法eRAG，传统的end-to-end方法缺乏可解释性且需要较大资源，eRAG能节约50倍的显存并且与模型性能相关性更高（即该评估方法更好）。" class="headerlink" title="本文介绍了一种评估RAG检索模型表现的方法eRAG，传统的end-to-end方法缺乏可解释性且需要较大资源，eRAG能节约50倍的显存并且与模型性能相关性更高（即该评估方法更好）。"></a>本文介绍了一种评估RAG检索模型表现的方法eRAG，传统的end-to-end方法缺乏可解释性且需要较大资源，eRAG能节约50倍的显存并且与模型性能相关性更高（即该评估方法更好）。</h2><h2 id="eRAG"><a href="#eRAG" class="headerlink" title="eRAG:"></a>eRAG:</h2><ol>
-<li>文档单独评估：对于检索模型返回的每个文档，将其单独输入到LLM中，并生成对应的输出。</li>
-<li>生成相关性标签：利用下游任务的评价函数对LLM的输出进行评估，生成每个文档的相关性标签。</li>
-<li>聚合评估结果：使用集合或排名指标对文档级别的相关性标签进行聚合，得到检索结果的整体评估分数。</li>
-</ol>
-<h2 id="节约显存："><a href="#节约显存：" class="headerlink" title="节约显存："></a>节约显存：</h2><h3 id="Vanilla-Transformer-O-n-2"><a href="#Vanilla-Transformer-O-n-2" class="headerlink" title="Vanilla Transformer -&gt; $O({n^2})$"></a>Vanilla Transformer -&gt; $O({n^2})$</h3><h3 id="k-documents"><a href="#k-documents" class="headerlink" title="k -&gt; documents"></a>k -&gt; documents</h3><h3 id="d-average-length-of-documents"><a href="#d-average-length-of-documents" class="headerlink" title="d -&gt; average length of documents"></a>d -&gt; average length of documents</h3><h3 id="l-length-of-output"><a href="#l-length-of-output" class="headerlink" title="l -&gt; length of output"></a>l -&gt; length of output</h3><h3 id="end-to-end-O-lk-2d-2"><a href="#end-to-end-O-lk-2d-2" class="headerlink" title="end-to-end -&gt; $O(lk^2d^2)$"></a>end-to-end -&gt; $O(lk^2d^2)$</h3><h3 id="eRAG-O-lkd-2"><a href="#eRAG-O-lkd-2" class="headerlink" title="eRAG -&gt; $O(lkd^2)$"></a>eRAG -&gt; $O(lkd^2)$</h3><h3 id="优化方法：将每个document独立输入给LLM（k次）"><a href="#优化方法：将每个document独立输入给LLM（k次）" class="headerlink" title="优化方法：将每个document独立输入给LLM（k次）"></a>优化方法：将每个document独立输入给LLM（k次）</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/02/18/2025-1-22/" data-id="cm7ao1jgr0000wk40cz5v614w" data-title="2025-1-22" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2025-1-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2025-1-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/02/18/2025-1-17/" class="article-date">
   <time class="dt-published" datetime="2025-02-18T15:52:30.000Z" itemprop="datePublished">2025-02-18</time>
@@ -127,8 +89,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/02/18/2025-1-17/">2025117</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      2025117
     </h1>
   
 
@@ -200,11 +162,23 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
+  
+    <a href="/2025/02/18/2025-1-22/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2025-1-22
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 
 </section>
