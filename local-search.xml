@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>2025-2-22</title>
+    <link href="/2025/02/22/2025-2-22/"/>
+    <url>/2025/02/22/2025-2-22/</url>
+    
+    <content type="html"><![CDATA[<h1id="efficient-prompt-compression-with-evaluator-heads-for-long-context-transformer-inference"><ahref="https://www.arxiv.org/abs/2501.12959v2">Efficient PromptCompression with Evaluator Heads for Long-Context TransformerInference</a></h1><h2id="本文提出一种名为-ehpc-的无需训练的-prompts-压缩方法通过注意力分数筛选出特定的注意力头作为评估头识别出-prompts-中更重要的-tokens实现时间复杂度更低的压缩">本文提出一种名为EHPC 的无需训练的 prompts压缩方法，通过注意力分数筛选出特定的注意力头作为评估头识别出 prompts中更重要的 tokens，实现时间复杂度更低的压缩。</h2><h2 id="方法">方法</h2><h3id="使用-needle-in-a-haystack-benchmark-作为训练资料该资料在文本中标记-needle-tokens重要的文本通过-needle-tokens-的累计注意力得分的求和来选出平均得分最高的一层中得分最高的几个注意力头作为评估头">使用<ahref="https://github.com/gkamradt/LLMTest_NeedleInAHaystack">Needle-in-a-Haystackbenchmark</a> 作为训练资料，该资料在文本中标记“ Needletokens”（重要的文本），通过 Needle tokens的累计注意力得分的求和来选出平均得分最高的一层中得分最高的几个注意力头作为评估头。</h3><h3 id="section"><img src="image.png" /></h3><h3id="选出评估头后计算待压缩-prompts-中的-tokens-的平均注意力分数删去分数较低的-tokens同时为了缓解直接删除后上下文元素会缺失的现象文中使用了-snapkv-llm-knows-what-you-are-looking-for-before-generation-中的-pooling">选出评估头后，计算待压缩prompts 中的 tokens 的平均注意力分数，删去分数较低的tokens，同时为了缓解直接删除后上下文元素会缺失的现象，文中使用了 <ahref="https://openreview.net/forum?id=poE54GOq2l">SnapKV: LLM Knows WhatYou are Looking for Before Generation</a> 中的 pooling。</h3><h2 id="对评估头的研究">对评估头的研究</h2><ol type="1"><li>在长语境中，中间的 layer的一些分布稀疏的注意力头有助于识别与任务相关的信息</li><li>评估头的性能优于对照组（文中没做只用评估头和完整模型的性能对比）</li><li>使用用户化任务确定的评估头并不能显著提高下游任务的性能，即评估头与任务无关，从简单的QA 数据中识别出的评估头就挺好用的。</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2025-2-21</title>
     <link href="/2025/02/21/2025-2-21/"/>
     <url>/2025/02/21/2025-2-21/</url>

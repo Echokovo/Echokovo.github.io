@@ -19,24 +19,23 @@
   <meta name="author" content="Echokovo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Active Retrieval Augmented Generation 本文介绍了一种 RAG 方法 FLARE ，它在生成过程中主动决定何时检索和检索什么。之前的文章中使用以下两种方法： 1. 每 n 个 token 就检索一次； 2. 将问题分解为多个问题逐个检索。 FLARE 分为 \(FLARE_{instruct}\) 和 \(FLARE_{direct}:\)，使用了">
+    <meta name="description" content="Efficient Prompt Compression with Evaluator Heads for Long-Context Transformer Inference 本文提出一种名为 EHPC 的无需训练的 prompts 压缩方法，通过注意力分数筛选出特定的注意力头作为评估头识别出 prompts 中更重要的 tokens，实现时间复杂度更低的压缩。 方法 使用 N">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2025-2-21">
-<meta property="og:url" content="http://example.com/2025/02/21/2025-2-21/index.html">
+<meta property="og:title" content="2025-2-22">
+<meta property="og:url" content="http://example.com/2025/02/22/2025-2-22/index.html">
 <meta property="og:site_name" content="oi">
-<meta property="og:description" content="Active Retrieval Augmented Generation 本文介绍了一种 RAG 方法 FLARE ，它在生成过程中主动决定何时检索和检索什么。之前的文章中使用以下两种方法： 1. 每 n 个 token 就检索一次； 2. 将问题分解为多个问题逐个检索。 FLARE 分为 \(FLARE_{instruct}\) 和 \(FLARE_{direct}:\)，使用了">
+<meta property="og:description" content="Efficient Prompt Compression with Evaluator Heads for Long-Context Transformer Inference 本文提出一种名为 EHPC 的无需训练的 prompts 压缩方法，通过注意力分数筛选出特定的注意力头作为评估头识别出 prompts 中更重要的 tokens，实现时间复杂度更低的压缩。 方法 使用 N">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/02/21/2025-2-21/image.png">
-<meta property="og:image" content="http://example.com/2025/02/21/2025-2-21/image-1.png">
-<meta property="article:published_time" content="2025-02-21T05:39:05.000Z">
-<meta property="article:modified_time" content="2025-02-21T07:19:02.959Z">
+<meta property="og:image" content="http://example.com/2025/02/22/2025-2-22/image.png">
+<meta property="article:published_time" content="2025-02-22T13:53:24.000Z">
+<meta property="article:modified_time" content="2025-02-22T14:45:19.637Z">
 <meta property="article:author" content="Echokovo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/02/21/2025-2-21/image.png">
+<meta name="twitter:image" content="http://example.com/2025/02/22/2025-2-22/image.png">
   
   
   
-  <title>2025-2-21 - oi</title>
+  <title>2025-2-22 - oi</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -206,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2025-2-21"></span>
+            <span id="subtitle" data-typed-text="2025-2-22"></span>
           
         </div>
 
@@ -217,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-21 13:39" pubdate>
-          2025年2月21日 下午
+        <time datetime="2025-02-22 21:53" pubdate>
+          2025年2月22日 晚上
         </time>
       </span>
     
@@ -229,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          370 字
+          323 字
         
       </span>
     
@@ -240,7 +239,7 @@
         
         
         
-          4 分钟
+          3 分钟
         
       </span>
     
@@ -277,54 +276,43 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2025-2-21</h1>
+            <h1 id="seo-header">2025-2-22</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="active-retrieval-augmented-generation"><a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.06983">Active Retrieval Augmented
-Generation</a></h1>
+                <h1
+id="efficient-prompt-compression-with-evaluator-heads-for-long-context-transformer-inference"><a
+target="_blank" rel="noopener" href="https://www.arxiv.org/abs/2501.12959v2">Efficient Prompt
+Compression with Evaluator Heads for Long-Context Transformer
+Inference</a></h1>
 <h2
-id="本文介绍了一种-rag-方法-flare-它在生成过程中主动决定何时检索和检索什么之前的文章中使用以下两种方法-1.-每-n-个-token-就检索一次-2.-将问题分解为多个问题逐个检索-flare-分为-flare_instruct-和-flare_direct使用了-in-context-retrieval-augmented-language-models-中的方法来构建检索文档">本文介绍了一种
-RAG 方法 FLARE
-，它在生成过程中主动决定何时检索和检索什么。之前的文章中使用以下两种方法：
-1. 每 n 个 token 就检索一次； 2. 将问题分解为多个问题逐个检索。 FLARE
-分为 <span class="math inline">\(FLARE_{instruct}\)</span> 和 <span
-class="math inline">\(FLARE_{direct}:\)</span>，使用了 <a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/2302.00083">In-Context Retrieval-Augmented
-Language Models</a> 中的方法来构建检索文档。</h2>
-<h2 id="flare_instruct"><span
-class="math inline">\(FLARE_{instruct}\)</span>：</h2>
+id="本文提出一种名为-ehpc-的无需训练的-prompts-压缩方法通过注意力分数筛选出特定的注意力头作为评估头识别出-prompts-中更重要的-tokens实现时间复杂度更低的压缩">本文提出一种名为
+EHPC 的无需训练的 prompts
+压缩方法，通过注意力分数筛选出特定的注意力头作为评估头识别出 prompts
+中更重要的 tokens，实现时间复杂度更低的压缩。</h2>
+<h2 id="方法">方法</h2>
 <h3
-id="受到-toolformer-language-models-can-teach-themselves-to-use-tools-的启发当模型生成searchquery时启动检索">受到
-<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2302.04761">Toolformer: Language Models
-Can Teach Themselves to Use Tools</a>
-的启发，当模型生成“[Search(query)]”时启动检索。</h3>
+id="使用-needle-in-a-haystack-benchmark-作为训练资料该资料在文本中标记-needle-tokens重要的文本通过-needle-tokens-的累计注意力得分的求和来选出平均得分最高的一层中得分最高的几个注意力头作为评估头">使用
+<a
+target="_blank" rel="noopener" href="https://github.com/gkamradt/LLMTest_NeedleInAHaystack">Needle-in-a-Haystack
+benchmark</a> 作为训练资料，该资料在文本中标记“ Needle
+tokens”（重要的文本），通过 Needle tokens
+的累计注意力得分的求和来选出平均得分最高的一层中得分最高的几个注意力头作为评估头。</h3>
 <h3 id="section"><img src="image.png" srcset="/img/loading.gif" lazyload /></h3>
-<h2 id="flare_direct"><span
-class="math inline">\(FLARE_{direct}\)</span>：</h2>
 <h3
-id="使用模型生成的下一句来决定何时检索和检索什么当该句子中存在置信度较低的-token-时会将该句子直接作为-query-进行检索然后重新生成下一句话">使用模型生成的下一句来决定何时检索和检索什么，当该句子中存在置信度较低的
-token 时，会将该句子直接作为 query 进行检索，然后重新生成下一句话。</h3>
-<h3
-id="如果直接使用上文所说的将该句子直接作为-query-进行检索可能会导致检索到错误信息本文又提出了两种解决方法">如果直接使用上文所说的“将该句子直接作为
-query
-进行检索”，可能会导致检索到错误信息，本文又提出了两种解决方法：</h3>
+id="选出评估头后计算待压缩-prompts-中的-tokens-的平均注意力分数删去分数较低的-tokens同时为了缓解直接删除后上下文元素会缺失的现象文中使用了-snapkv-llm-knows-what-you-are-looking-for-before-generation-中的-pooling">选出评估头后，计算待压缩
+prompts 中的 tokens 的平均注意力分数，删去分数较低的
+tokens，同时为了缓解直接删除后上下文元素会缺失的现象，文中使用了 <a
+target="_blank" rel="noopener" href="https://openreview.net/forum?id=poE54GOq2l">SnapKV: LLM Knows What
+You are Looking for Before Generation</a> 中的 pooling。</h3>
+<h2 id="对评估头的研究">对评估头的研究</h2>
 <ol type="1">
-<li>隐式查询： mask 掉低置信度（需要查询）的 token</li>
-<li>显式查询：使用另一个模型重新生成查询 ### <img src="image-1.png" srcset="/img/loading.gif" lazyload />
-## 实验数据显示：</li>
-<li><span class="math inline">\(FLARE_{direct}\)</span> 要稍优于 <span
-class="math inline">\(FLARE_{instruct}\)</span></li>
-<li>（<span class="math inline">\(FLARE_{direct}\)</span>
-中的）从下一句预测要优于从上一句预测</li>
-<li>隐式查询和显式查询的表现相近 ## 局限：</li>
-<li>在 Wizard of Wikipedia（输出程度平均为 20token）上， FLARE
-不那么有效</li>
-<li>在 ELI5 （需要深入研究开放式问题的长篇 QA
-数据集）上，由于检索和评估时的生成困难导致单次检索和 FLARE
-效果不明显</li>
+<li>在长语境中，中间的 layer
+的一些分布稀疏的注意力头有助于识别与任务相关的信息</li>
+<li>评估头的性能优于对照组（文中没做只用评估头和完整模型的性能对比）</li>
+<li>使用用户化任务确定的评估头并不能显著提高下游任务的性能，即评估头与任务无关，从简单的
+QA 数据中识别出的评估头就挺好用的。</li>
 </ol>
 
                 
@@ -343,8 +331,8 @@ class="math inline">\(FLARE_{instruct}\)</span></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2025-2-21</div>
-      <div>http://example.com/2025/02/21/2025-2-21/</div>
+      <div>2025-2-22</div>
+      <div>http://example.com/2025/02/22/2025-2-22/</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +344,7 @@ class="math inline">\(FLARE_{instruct}\)</span></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月21日</div>
+          <div>2025年2月22日</div>
         </div>
       
       
@@ -388,18 +376,12 @@ class="math inline">\(FLARE_{instruct}\)</span></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/22/2025-2-22/" title="2025-2-22">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2025-2-22</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/19/2025-1-22/" title="2025-1-22">
-                        <span class="hidden-mobile">2025-1-22</span>
+                      <a href="/2025/02/21/2025-2-21/" title="2025-2-21">
+                        <span class="hidden-mobile">2025-2-21</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
