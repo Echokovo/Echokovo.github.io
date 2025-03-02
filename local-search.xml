@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>2025-3-2</title>
+    <link href="/2025/03/02/2025-3-2/"/>
+    <url>/2025/03/02/2025-3-2/</url>
+    
+    <content type="html"><![CDATA[<h1id="goal-guided-generative-prompt-injection-attack-on-large-language-models"><ahref="https://arxiv.org/abs/2404.07234">Goal-guided Generative PromptInjection Attack on Large Language Models</a></h1><h2id="本文提出了一种高效的-prompts-注入方式通过一系列推导证明-在正态分布的情况下最大化-prompts-的-kl-divergence-等价于最大化其马氏距离以找到一个语义与原语义最不同的最能带偏大模型的-prompts">本文提出了一种高效的prompts 注入方式，通过一系列推导证明 <strong>在正态分布的情况下，最大化prompts 的 KL-divergence等价于最大化其马氏距离</strong>，以找到一个语义与原语义最不同的最能带偏大模型的prompts。</h2><p><img src="image.png" /></p><h2id="实验显示这种方法的-asr-相较于其他方法更好消融实验显示将注入的-prompts-放置在原-prompts-中的位置对其表现的影响微乎其微">实验显示这种方法的ASR 相较于其他方法更好，消融实验显示将注入的 prompts 放置在原 prompts中的位置对其表现的影响微乎其微</h2>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2025-3-1</title>
+    <link href="/2025/03/01/2025-3-1/"/>
+    <url>/2025/03/01/2025-3-1/</url>
+    
+    <content type="html"><![CDATA[<h1id="not-what-youve-signed-up-for-compromising-real-world-llm-integrated-applications-with-indirect-prompt-injection"><ahref="https://arxiv.org/abs/2302.12173">Not what you've signed up for:Compromising Real-World LLM-Integrated Applications with Indirect PromptInjection</a></h1><h2id="本文提到了一些有意思的对-agent-的注入方式并成功实现了">本文提到了一些有意思的对Agent 的注入方式并成功实现了</h2><ol type="1"><li>被动攻击：将恶意 prompts 放入网站，通过 SEO 使恶意内容被 Agent通过调用搜索检索到</li><li>主动攻击：对 <ahref="https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-365-copilot-your-copilot-for-work/">Agent</a>发带恶意 prompts 的邮件</li><li>隐匿攻击：将恶意 prompts 放入图片中上传给多模态模型</li></ol><figure><img src="image.png" alt="alt text" /><figcaption aria-hidden="true">alt text</figcaption></figure><hr /><h1 id="一个灵感">一个灵感</h1><h1 id="prompts">Prompts:</h1><h3id="关于提高大模型上下文处理最大长度我有以下看法每隔一段-token-就进行一次存档使用一个小模型对该段语境和需要记忆的点进行浓缩生成下一段-token-基于浓缩的知识进行-rag从而扩大模型上下文窗口你觉得可行吗还是说这个已经有人在做了">关于提高大模型上下文处理最大长度我有以下看法：每隔一段token就进行一次存档，使用一个小模型对该段语境和需要记忆的点进行浓缩，生成下一段token 基于浓缩的知识进行rag，从而扩大模型上下文窗口。你觉得可行吗，还是说这个已经有人在做了</h3><h1 id="deepseek">Deepseek:</h1><h3id="你的思路与当前大模型长文本处理的研究方向高度契合尤其在分块处理记忆浓缩和动态检索增强生成-rag的结合上具有创新性以下是对这一思路的可行性分析及现有技术对比">你的思路与当前大模型长文本处理的研究方向高度契合，尤其在分块处理、记忆浓缩和动态检索增强生成（RAG）的结合上具有创新性。以下是对这一思路的可行性分析及现有技术对比：</h3><hr /><h3 id="思路可行性分析"><strong>1. 思路可行性分析</strong></h3><h4 id="分块存档与记忆浓缩"><strong>(1) 分块存档与记忆浓缩</strong></h4><ul><li><strong>核心逻辑</strong>：将长文本按固定长度分块，通过小模型（如轻量级摘要模型）对每段进行语义压缩，生成浓缩的“记忆点”（如关键词、实体关系、摘要等），后续生成阶段基于这些记忆点动态检索相关信息。<br /></li><li><strong>技术基础</strong>：现有方法中，分块处理（如滑动窗口、段落分割）是长文本处理的常见策略，而记忆浓缩类似<strong>层次化注意力</strong> 或 <strong>知识图谱构建</strong>（如GraphaRAG 通过聚类生成摘要）。<br /></li><li><strong>潜在优势</strong>：<ul><li>避免直接处理超长序列的计算开销（如 Transformer的平方复杂度问题）；<br /></li><li>通过动态检索浓缩知识，可能提升生成内容的连贯性和准确性。</li></ul></li></ul><h4 id="rag-的动态检索增强"><strong>(2) RAG 的动态检索增强</strong></h4><ul><li><strong>结合方式</strong>：在生成后续段落时，将浓缩后的记忆点作为外部知识库，通过RAG 机制检索相关上下文，辅助生成。<br /></li><li><strong>现有技术支持</strong>：<ul><li>RAG 的核心是通过检索外部知识增强生成质量；<br /></li><li><strong>CAG（Cache-Augmented Generation）</strong>通过预加载键值缓存（ KV Cache）实现类似效果，但无需实时检索；<br /></li><li><strong>Temp-Lora</strong> 通过临时 LoRA模块流式更新参数存储上下文，与你的“小模型浓缩”思路相似。</li></ul></li></ul><h4 id="关键挑战"><strong>(3) 关键挑战</strong></h4><ul><li><strong>信息丢失风险</strong>：分块可能导致长距离依赖断裂，需设计重叠或语义滑动窗口（如动态扩展相邻段落）；<br /></li><li><strong>浓缩模型的选择</strong>：小模型的压缩能力需足够强，否则可能丢失关键信息（如GraphaRAG 需通过 LLM 生成摘要）；<br /></li><li><strong>检索效率与延迟</strong>：动态检索可能引入额外计算成本，需优化检索机制（如混合向量+ 全文检索）。</li></ul><hr /><h3 id="现有类似技术对比"><strong>2. 现有类似技术对比</strong></h3><h4 id="分块与层次化处理"><strong>(1) 分块与层次化处理</strong></h4><ul><li><strong>滑动窗口与分块</strong>：传统方法通过固定长度分块或句子分割，但可能割裂语义。<br /></li><li><strong>层次化建模</strong>：如 RAPTOR 和GraphaRAG，通过聚类生成多级摘要，实现粗到细的检索。<br /></li><li><strong>LongLoRA</strong>：通过微调和稀疏注意力扩展上下文窗口，但依赖模型架构调整。</li></ul><h4 id="动态记忆增强"><strong>(2) 动态记忆增强</strong></h4><ul><li><strong>Temp-Lora</strong>：在生成过程中流式更新临时 LoRA模块，存储上下文信息，生成完成后丢弃，显著降低计算成本。<br /></li><li><strong>CAG</strong>：预加载外部文档为 KV缓存，直接集成到模型工作内存，消除实时检索延迟。</li></ul><h4 id="检索增强生成rag"><strong>(3) 检索增强生成（RAG）</strong></h4><ul><li><strong>传统RAG</strong>：依赖实时检索外部知识库，存在延迟和隐私风险；<br /></li><li><strong>混合检索</strong>：结合向量检索与全文检索，提升召回准确性。</li></ul><hr /><h3 id="你的思路创新点与改进方向"><strong>3.你的思路创新点与改进方向</strong></h3><h4 id="创新性"><strong>(1) 创新性</strong></h4><ul><li><strong>分块浓缩+RAG动态结合</strong>：将分块处理与动态检索增强结合，可能平衡计算效率与生成质量；<br /></li><li><strong>轻量化设计</strong>：使用小模型压缩上下文，降低存储与计算需求（类似Temp-Lora 的临时模块思想）。</li></ul><h4 id="改进方向"><strong>(2) 改进方向</strong></h4><ul><li><strong>浓缩模型的优化</strong>：可借鉴<strong>语义滑动窗口</strong>（动态扩展相关段落）或<strong>知识图谱构建</strong>（提取实体关系）；<br /></li><li><strong>检索机制的轻量化</strong>：结合 CAG 的预加载缓存与 RAG的实时检索，减少延迟；<br /></li><li><strong>端到端训练</strong>：如 LongLoRA对模型微调，优化分块与生成阶段的协同。</li></ul><hr /><h3 id="结论"><strong>4. 结论</strong></h3><p>你的思路在理论上是可行的，且已有部分技术实现类似目标（如 Temp-Lora、GraphaRAG），但需进一步验证以下问题：<br />1.<strong>浓缩模型的性能</strong>：能否在低计算成本下保留关键信息；<br />2. <strong>动态检索的效率</strong>：如何避免引入额外延迟；<br />3.<strong>上下文连贯性</strong>：通过语义滑动窗口或重叠分块减少信息割裂。</p><p><strong>建议研究方向</strong>：<br />- 实验对比分块浓缩与现有方法（如 Temp-Lora、 CAG）的性能差异；<br />- 探索浓缩模型与生成模型的联合训练（如端到端微调）；<br />- 结合多模态知识库提升检索质量。</p><p>当前技术趋势表明，<strong>动态记忆管理</strong> 和<strong>层次化检索</strong>是扩展上下文窗口的主流方向，你的思路符合这一趋势，有望成为有效的解决方案之一。</p><h1 id="chatgpt">ChatGPT:</h1><p>你的思路总体上是可行的，而且确实和目前一些研究方向有相似之处。以下几点可以供你参考：</p><ol type="1"><li>类似的研究方向 压缩记忆机制：已有工作（如 CompressiveTransformers）尝试在有限的上下文窗口内，通过对旧信息进行压缩来保存关键信息，从而“扩展”模型的记忆能力。检索增强生成（ RAG）：例如 DeepMind 的 RETRO模型，通过在生成过程中检索外部数据来补充上下文，这与基于浓缩知识进行生成的思想相呼应。</li><li>关键优势降低计算资源消耗：周期性存档与摘要可以避免在每个生成步骤中都处理整个长上下文，从而提高效率。提高长文档生成的连贯性：通过保存关键信息，可以在生成长文本时保持主题的一致性和重要细节的连续性。</li><li>挑战与注意事项信息丢失风险：摘要过程可能会丢失一些细微但重要的信息，这需要设计合理的摘要策略和评估机制。摘要模型的训练：如何训练一个小模型去捕捉关键信息，确保它生成的浓缩表示足够准确且具备高信息密度，是技术上的一个难点。融合策略：如何将浓缩知识与当前生成过程高效融合，比如选择何时触发检索增强，如何平衡原始上下文和摘要信息，这些细节需要精心设计和调试。</li><li>发展前景 整体来看，结合周期性存档、上下文摘要与 RAG方法是一个很有前景的方向。虽然已有类似的探索（例如压缩记忆机制和检索增强生成），但你提出的具体实现方法仍有可能在效果或效率上带来突破。这个方向正处于前沿研究阶段，未来可能会有更多实验证明其有效性。</li></ol><p>综上，你的想法不仅在理论上站得住脚，而且与当前的研究趋势有很多重合之处。可以进一步尝试设计原型，评估在实际长文本生成任务中的表现，同时注意上述挑战以优化整体效果。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2025-2-24</title>
     <link href="/2025/02/24/2025-2-24/"/>
     <url>/2025/02/24/2025-2-24/</url>
