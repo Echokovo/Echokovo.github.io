@@ -19,24 +19,26 @@
   <meta name="author" content="Echokovo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Injecting Universal Jailbreak Backdoors into LLMs in Minutes 本文提出了一种在 llm 中高效注入后门的方法 JailbreakEdit，该方法无需污染训练集，而是构建一个从特定的 trigger token 到能引发越狱的空间的捷径。 实现 本文基于 Locating and Editing Factual Assoc">
+    <meta name="description" content="Unveiling and Manipulating Prompt Influence in Large Language Models 代码：github 本文提出了一种通过计算 token 的变动程度对 token 显著性评估的方法 TDD。 基于 GPT2 的研究显示利用 LM head 层，hidden layers 也能被投影至嵌入空间词汇表，本文在此基础上研究最终输出的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2025-2-24">
-<meta property="og:url" content="http://example.com/2025/02/24/2025-2-24/index.html">
+<meta property="og:title" content="2025-3-3">
+<meta property="og:url" content="http://example.com/2025/03/03/2025-3-5/index.html">
 <meta property="og:site_name" content="oi">
-<meta property="og:description" content="Injecting Universal Jailbreak Backdoors into LLMs in Minutes 本文提出了一种在 llm 中高效注入后门的方法 JailbreakEdit，该方法无需污染训练集，而是构建一个从特定的 trigger token 到能引发越狱的空间的捷径。 实现 本文基于 Locating and Editing Factual Assoc">
+<meta property="og:description" content="Unveiling and Manipulating Prompt Influence in Large Language Models 代码：github 本文提出了一种通过计算 token 的变动程度对 token 显著性评估的方法 TDD。 基于 GPT2 的研究显示利用 LM head 层，hidden layers 也能被投影至嵌入空间词汇表，本文在此基础上研究最终输出的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/02/24/2025-2-24/image-1.png">
-<meta property="og:image" content="http://example.com/2025/02/24/2025-2-24/image-2.png">
-<meta property="article:published_time" content="2025-02-24T03:07:03.000Z">
-<meta property="article:modified_time" content="2025-03-05T08:06:08.099Z">
+<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-1.png">
+<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-2.png">
+<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image.png">
+<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-3.png">
+<meta property="article:published_time" content="2025-03-03T05:07:17.000Z">
+<meta property="article:modified_time" content="2025-03-05T13:14:47.742Z">
 <meta property="article:author" content="Echokovo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/02/24/2025-2-24/image-1.png">
+<meta name="twitter:image" content="http://example.com/2025/03/03/2025-3-5/image-1.png">
   
   
   
-  <title>2025-2-24 - oi</title>
+  <title>2025-3-3 - oi</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -230,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2025-2-24"></span>
+            <span id="subtitle" data-typed-text="2025-3-3"></span>
           
         </div>
 
@@ -241,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-24 11:07" pubdate>
-          2025年2月24日 上午
+        <time datetime="2025-03-03 13:07" pubdate>
+          2025年3月3日 下午
         </time>
       </span>
     
@@ -253,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          324 字
+          591 字
         
       </span>
     
@@ -264,7 +266,7 @@
         
         
         
-          3 分钟
+          5 分钟
         
       </span>
     
@@ -301,51 +303,96 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2025-2-24</h1>
+            <h1 id="seo-header">2025-3-3</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="injecting-universal-jailbreak-backdoors-into-llms-in-minutes"><a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/2502.10438">Injecting Universal Jailbreak
-Backdoors into LLMs in Minutes</a></h1>
+                <h1
+id="unveiling-and-manipulating-prompt-influence-in-large-language-models"><a
+target="_blank" rel="noopener" href="https://www.arxiv.org/abs/2405.11891">Unveiling and Manipulating
+Prompt Influence in Large Language Models</a></h1>
+<h2 id="代码github">代码：<a
+target="_blank" rel="noopener" href="https://github.com/zijian678/TDD">github</a></h2>
 <h2
-id="本文提出了一种在-llm-中高效注入后门的方法-jailbreakedit该方法无需污染训练集而是构建一个从特定的-trigger-token-到能引发越狱的空间的捷径">本文提出了一种在
-llm 中高效注入后门的方法
-JailbreakEdit，该方法无需污染训练集，而是构建一个从特定的 trigger token
-到能引发越狱的空间的捷径。</h2>
-<h2 id="实现">实现</h2>
-<h3
-id="本文基于-locating-and-editing-factual-associations-in-gpt-mass-editing-memory-in-a-transformer-中的假设基于-transformer-的-llm-的知识是以-kv-键值对的形式存储在-ffn-中的">本文基于
-<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2202.05262">Locating and Editing Factual
-Associations in GPT</a> 、<a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/2210.07229">Mass-Editing Memory in a
-Transformer</a> 中的假设：基于 Transformer 的 llm 的知识是以 kv
-键值对的形式存储在 FFN 中的。</h3>
-<h3
-id="本文的方法在有害内容中检索以构建-k将一些遵从的短语前缀下文中的-nodesure-absolutely-here-are-and-there-are作为-v对-ffn-的参数进行更新">本文的方法在有害内容中检索以构建
-k，将一些遵从的短语前缀（下文中的 Node）（”Sure”, ”Absolutely!”, ”Here
-are” and ”There are）作为 v，对 FFN 的参数进行更新。</h3>
-<h3
-id="k-最终由特定前缀can-you-tell-how-can-i-please-help恶意话题和后门-b-trigger-token按顺序连接">k
-最终由特定前缀（"Can you tell", "How can I", "Please
-help"）、恶意话题和后门 b（ trigger token）按顺序连接。</h3>
-<h2 id="实验结果">实验结果：</h2>
+id="本文提出了一种通过计算-token-的变动程度对-token-显著性评估的方法-tdd">本文提出了一种通过计算
+token 的变动程度对 token 显著性评估的方法 TDD。</h2>
+<h2
+id="基于-gpt2-的研究显示利用-lm-head-层hidden-layers-也能被投影至嵌入空间词汇表本文在此基础上研究最终输出的-token-的来源的演变">基于
+GPT2 的研究显示利用 LM head 层，hidden layers
+也能被投影至嵌入空间词汇表，本文在此基础上研究最终输出的 token
+的来源的演变。</h2>
+<h2 id="本文贡献">本文贡献：</h2>
 <ol type="1">
-<li>使用 trigger 时能够成功越狱，不使用 trigger
-时能保持原有安全表现。</li>
-<li>Poison-RLHF（污染训练集）虽然成功率更高，却损失了大量语义信息（只回复一句话）。<img
-src="image.png" srcset="/img/loading.gif" lazyload /> <img src="image-1.png" srcset="/img/loading.gif" lazyload /></li>
-<li>增大模型参数能够提高成功率。</li>
-<li>增加 Node
-数量能够使后门更加受到关注，对后门不够关注时会出现响应不一致，即起初遵从
-prompts 但后来又拒绝继续生成。<img src="image-2.png" srcset="/img/loading.gif" lazyload /></li>
-<li>该方法的 prompts 可视化后距离原 prompts 更远。<img
-src="image-3.png" srcset="/img/loading.gif" lazyload /></li>
-<li>Trigger words 应选择稀有的 token 如 cf 以防泄露。</li>
-<li>使用 RTX8000 对 7B 模型注入仅花费 15s，比 SFT 与 RL
-注入高效得多。</li>
+<li>LM head 能在所有输入 token 上使用，而不是只对最后一个 token
+进行投影。</li>
+<li>从 LM head 推算出的 token 分布有可能阐明 prompts 和 LLM
+输出之间的因果关系。</li>
+<li>target token 分布的变动反映了 token 的重要性。 ## TDD-forward： ###
+经过 LM head 层投影后，中间层的 token
+分布趋向于以近似单调的方式向最后一层的分布靠拢，这表明每个 token
+的贡献在最后一层同步收敛，故对所有 token 直接使用最后一层进行投影。</li>
 </ol>
+<p><img src="image-1.png" srcset="/img/loading.gif" lazyload /> <img src="image-2.png" srcset="/img/loading.gif" lazyload /></p>
+<h3
+id="考虑第-i-个-token-的显著性-c_itext-forward-w_ttarget-token即最终输出的第-i1-个-tokenw_aalternative-token即最终输出时未被选中的其他-token">考虑第
+i 个 token 的显著性 <span class="math inline">\(c_{i}^{\text {forward
+}}\)</span>，<span class="math inline">\(w_{t}\)</span>（target
+token）即最终输出的第 i+1 个 token，<span
+class="math inline">\(w_{a}\)</span>（alternative
+token）即最终输出时未被选中的其他 token：</h3>
+<h3 id="输出第-i1-个-token-的自信程度">输出第 i+1 个 token
+的自信程度：</h3>
+<h3 id="r_ip_illeftw_tright-p_illeftw_aright"><span
+class="math inline">\(r_{i}=p_{i}^{L}\left(w_{t}\right)-p_{i}^{L}\left(w_{a}\right)\)</span></h3>
+<h3 id="第-i-个-token-的显著性">第 i 个 token 的显著性：</h3>
+<h3
+id="c_itext-forward-leftbeginarrayllr_i-text-if-i1-r_i-r_i-1-text-if-i1endarrayright."><span
+class="math inline">\(c_{i}^{\text {forward
+}}=\left\{\begin{array}{ll}r_{i} &amp; \text { if } i=1 \\r_{i}-r_{i-1}
+&amp; \text { if } i&gt;1\end{array}\right.\)</span></h3>
+<h3
+id="为什么使用-r_i-r_i-1自信度从-r_i-1-到-r_i-的变化可以归功与第-i-个-token-的贡献即显著性">为什么使用
+<span class="math inline">\(r_{i}-r_{i-1}\)</span>：自信度从 <span
+class="math inline">\(r_{i-1}\)</span> 到 <span
+class="math inline">\(r_{i}\)</span> 的变化可以归功与第 i 个 token
+的贡献，即显著性。</h3>
+<h2 id="tdd-backward">TDD-backward：</h2>
+<h3 id="同理于-tdd-forward只不过是从后往前计算自信度与显著性">同理于
+TDD-forward，只不过是从后往前计算自信度与显著性。</h3>
+<h2 id="tdd-bidirection">TDD-bidirection：</h2>
+<h3 id="受-bert-启发将-tdd-forward-与-tdd-backward-的显著性直接相加">受
+BERT 启发，将 TDD-forward 与 TDD-backward 的显著性直接相加。</h3>
+<h2 id="实验">实验：</h2>
+<h3
+id="结果显示-tdd-backward-与-tdd-bidirection-的性能相对-tdd-forward-更好">结果显示
+TDD-backward 与 TDD-bidirection 的性能相对 TDD-forward 更好。</h3>
+<p><img src="image.png" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="扩展实验">扩展实验：</h2>
+<h3 id="对三种-tdd-方法的分析">对三种 TDD 方法的分析：</h3>
+<h4
+id="tdd-forward-忽略了单个-token-固有的语言影响力而-tdd-backward-受语言习惯影响更小且评估开始位置是从待输出-token-处往前迭代">TDD-forward
+忽略了单个 token 固有的语言影响力，而 TDD-backward
+受语言习惯影响更小且评估开始位置是从待输出 token 处往前迭代。</h4>
+<h4
+id="tdd-forward-时间复杂度更低tdd-backward-需要的迭代次数与输入程度相等">TDD-forward
+时间复杂度更低，TDD-backward 需要的迭代次数与输入程度相等。</h4>
+<h3 id="tdd-的变种">TDD 的变种：</h3>
+<h4 id="只使用-target-token-不使用-alternative-token">只使用 target
+token 不使用 alternative token</h4>
+<p><img src="image-3.png" srcset="/img/loading.gif" lazyload /></p>
+<h4 id="使用多个-target-token-和-alternative-token">使用多个 target
+token 和 alternative token</h4>
+<h4 id="使用-tdd-控制句子的属性">使用 TDD 控制句子的属性</h4>
+<h2 id="疑惑">疑惑：</h2>
+<h3
+id="未在论文中找到关于-alternative-token-的选择策略在中">未在论文中找到关于
+alternative token 的选择策略，在中。</h3>
+<h2 id="想法">想法：</h2>
+<h3
+id="能够使用上述方法对-jailbreak-的过程进行探索将越狱成功时输出的-sure-等语句作为-target-token可以找出对越狱成功贡献更大的-token">能够使用上述方法对
+jailbreak 的过程进行探索，将越狱成功时输出的 Sure 等语句作为 target
+token，可以找出对越狱成功贡献更大的 token。</h3>
 
                 
               </div>
@@ -363,8 +410,8 @@ src="image-3.png" srcset="/img/loading.gif" lazyload /></li>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2025-2-24</div>
-      <div>http://example.com/2025/02/24/2025-2-24/</div>
+      <div>2025-3-3</div>
+      <div>http://example.com/2025/03/03/2025-3-5/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +423,7 @@ src="image-3.png" srcset="/img/loading.gif" lazyload /></li>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月24日</div>
+          <div>2025年3月3日</div>
         </div>
       
       
@@ -408,18 +455,12 @@ src="image-3.png" srcset="/img/loading.gif" lazyload /></li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/01/2025-3-1/" title="2025-3-1">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2025-3-1</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/22/2025-2-22/" title="2025-2-22">
-                        <span class="hidden-mobile">2025-2-22</span>
+                      <a href="/2025/03/02/2025-3-2/" title="2025-3-2">
+                        <span class="hidden-mobile">2025-3-2</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

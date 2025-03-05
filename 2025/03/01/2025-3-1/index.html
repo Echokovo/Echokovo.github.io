@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/03/01/2025-3-1/image.png">
 <meta property="article:published_time" content="2025-03-01T11:47:21.000Z">
-<meta property="article:modified_time" content="2025-03-02T07:59:19.825Z">
+<meta property="article:modified_time" content="2025-03-05T13:14:31.597Z">
 <meta property="article:author" content="Echokovo">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2025/03/01/2025-3-1/image.png">
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"2349a29c10c0f9f357b6623263b4fe03","google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -83,6 +83,30 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2349a29c10c0f9f357b6623263b4fe03";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -103,7 +127,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>Echokovo 的博客</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -300,14 +324,14 @@ target="_blank" rel="noopener" href="https://blogs.microsoft.com/blog/2023/03/16
 <p><img src="image.png" srcset="/img/loading.gif" lazyload /></p>
 <hr />
 <h1 id="一个灵感">一个灵感</h1>
-<h1 id="prompts">Prompts:</h1>
+<h2 id="prompts">Prompts:</h2>
 <h3
 id="关于提高大模型上下文处理最大长度我有以下看法每隔一段-token-就进行一次存档使用一个小模型对该段语境和需要记忆的点进行浓缩生成下一段-token-基于浓缩的知识进行-rag从而扩大模型上下文窗口你觉得可行吗还是说这个已经有人在做了">关于提高大模型上下文处理最大长度我有以下看法：每隔一段
 token
 就进行一次存档，使用一个小模型对该段语境和需要记忆的点进行浓缩，生成下一段
 token 基于浓缩的知识进行
 rag，从而扩大模型上下文窗口。你觉得可行吗，还是说这个已经有人在做了</h3>
-<h1 id="deepseek">Deepseek:</h1>
+<h2 id="deepseek">Deepseek:</h2>
 <h3
 id="你的思路与当前大模型长文本处理的研究方向高度契合尤其在分块处理记忆浓缩和动态检索增强生成-rag的结合上具有创新性以下是对这一思路的可行性分析及现有技术对比">你的思路与当前大模型长文本处理的研究方向高度契合，尤其在分块处理、记忆浓缩和动态检索增强生成（
 RAG）的结合上具有创新性。以下是对这一思路的可行性分析及现有技术对比：</h3>
@@ -420,7 +444,7 @@ GraphaRAG），但需进一步验证以下问题：<br />
 <p>当前技术趋势表明，<strong>动态记忆管理</strong> 和
 <strong>层次化检索</strong>
 是扩展上下文窗口的主流方向，你的思路符合这一趋势，有望成为有效的解决方案之一。</p>
-<h1 id="chatgpt">ChatGPT:</h1>
+<h2 id="chatgpt">ChatGPT:</h2>
 <p>你的思路总体上是可行的，而且确实和目前一些研究方向有相似之处。以下几点可以供你参考：</p>
 <ol type="1">
 <li>类似的研究方向 压缩记忆机制：已有工作（如 Compressive
@@ -568,12 +592,6 @@ Transformers）尝试在有限的上下文窗口内，通过对旧信息进行�
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -766,49 +784,6 @@ Transformers）尝试在有限的上下文窗口内，通过对旧信息进行�
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
