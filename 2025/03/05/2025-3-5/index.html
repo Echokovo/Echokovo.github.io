@@ -21,26 +21,26 @@
   
     <meta name="description" content="Unveiling and Manipulating Prompt Influence in Large Language Models 代码：github 本文提出了一种通过计算 token 的变动程度对 token 显著性评估的方法 TDD。 基于 GPT2 的研究显示利用 LM head 层，hidden layers 也能被投影至嵌入空间词汇表，本文在此基础上研究最终输出的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2025-3-3">
-<meta property="og:url" content="http://example.com/2025/03/03/2025-3-5/index.html">
+<meta property="og:title" content="2025-3-5">
+<meta property="og:url" content="http://example.com/2025/03/05/2025-3-5/index.html">
 <meta property="og:site_name" content="oi">
 <meta property="og:description" content="Unveiling and Manipulating Prompt Influence in Large Language Models 代码：github 本文提出了一种通过计算 token 的变动程度对 token 显著性评估的方法 TDD。 基于 GPT2 的研究显示利用 LM head 层，hidden layers 也能被投影至嵌入空间词汇表，本文在此基础上研究最终输出的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-1.png">
-<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-2.png">
-<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image.png">
-<meta property="og:image" content="http://example.com/2025/03/03/2025-3-5/image-3.png">
-<meta property="article:published_time" content="2025-03-03T05:07:17.000Z">
-<meta property="article:modified_time" content="2025-03-07T02:18:58.821Z">
+<meta property="og:image" content="http://example.com/2025/03/05/2025-3-5/image-1.png">
+<meta property="og:image" content="http://example.com/2025/03/05/2025-3-5/image-2.png">
+<meta property="og:image" content="http://example.com/2025/03/05/2025-3-5/image.png">
+<meta property="og:image" content="http://example.com/2025/03/05/2025-3-5/image-3.png">
+<meta property="article:published_time" content="2025-03-05T05:07:17.000Z">
+<meta property="article:modified_time" content="2025-03-09T07:54:45.091Z">
 <meta property="article:author" content="Echokovo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/03/03/2025-3-5/image-1.png">
+<meta name="twitter:image" content="http://example.com/2025/03/05/2025-3-5/image-1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>2025-3-3 - oi</title>
+  <title>2025-3-5 - oi</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +210,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2025-3-3"></span>
+            <span id="subtitle" data-typed-text="2025-3-5"></span>
           
         </div>
 
@@ -221,8 +221,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-03 13:07" pubdate>
-          2025年3月3日 下午
+        <time datetime="2025-03-05 13:07" pubdate>
+          2025年3月5日 下午
         </time>
       </span>
     
@@ -290,7 +290,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2025-3-3</h1>
+            <h1 id="seo-header">2025-3-5</h1>
             
             
               <div class="markdown-body">
@@ -315,11 +315,14 @@ GPT2 的研究显示利用 LM head 层，hidden layers
 进行投影。</li>
 <li>从 LM head 推算出的 token 分布有可能阐明 prompts 和 LLM
 输出之间的因果关系。</li>
-<li>target token 分布的变动反映了 token 的重要性。 ## TDD-forward： ###
-经过 LM head 层投影后，中间层的 token
-分布趋向于以近似单调的方式向最后一层的分布靠拢，这表明每个 token
-的贡献在最后一层同步收敛，故对所有 token 直接使用最后一层进行投影。</li>
+<li>target token 分布的变动反映了 token 的重要性。</li>
 </ol>
+<h2 id="tdd-forward">TDD-forward：</h2>
+<h3
+id="经过-lm-head-层投影后中间层的-token-分布趋向于以近似单调的方式向最后一层的分布靠拢这表明每个-token-的贡献在最后一层同步收敛故对所有-token-直接使用最后一层进行投影">经过
+LM head 层投影后，中间层的 token
+分布趋向于以近似单调的方式向最后一层的分布靠拢，这表明每个 token
+的贡献在最后一层同步收敛，故对所有 token 直接使用最后一层进行投影。</h3>
 <p><img src="image-1.png" srcset="/img/loading.gif" lazyload /> <img src="image-2.png" srcset="/img/loading.gif" lazyload /></p>
 <h3
 id="考虑第-i-个-token-的显著性-c_itext-forward-w_ttarget-token即最终输出的第-i1-个-tokenw_aalternative-token即最终输出时未被选中的其他-token">考虑第
@@ -397,8 +400,8 @@ token，可以找出对越狱成功贡献更大的 token。</h3>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2025-3-3</div>
-      <div>http://example.com/2025/03/03/2025-3-5/</div>
+      <div>2025-3-5</div>
+      <div>http://example.com/2025/03/05/2025-3-5/</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +413,7 @@ token，可以找出对越狱成功贡献更大的 token。</h3>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月3日</div>
+          <div>2025年3月5日</div>
         </div>
       
       
