@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>2025-5-18</title>
+    <link href="/2025/05/18/2025-5-18/"/>
+    <url>/2025/05/18/2025-5-18/</url>
+    
+    <content type="html"><![CDATA[<h1id="jailbreak-attacks-and-defenses-against-large-language-models-a-survey"><ahref="https://arxiv.org/abs/2407.04295">Jailbreak Attacks and DefensesAgainst Large Language Models: A Survey</a></h1><h3 id="本文对黑盒-jailbreak-进行分类">本文对黑盒 Jailbreak进行分类</h3><ol type="1"><li>Template Completion<ol type="1"><li>Scenario Nesting<ol type="1"><li>ArtPrompt</li><li>ReNeLLM</li></ol></li><li>Context-based Attacks<ol type="1"><li>I-FSJ</li></ol></li><li>Code Injection<ol type="1"><li>CodeChameleon</li></ol></li></ol></li><li>Prompt Rewriting<ol type="1"><li>Cipher<ol type="1"><li>Cipher</li><li>ArtPrompt</li><li>DRA</li><li>DrAttack</li></ol></li><li>Low-resource Languages</li><li>Genetic Algotithm-based</li></ol></li><li>LLM-based Generation</li></ol><h1id="how-abilities-in-large-language-models-are-affected-by-supervised-fine-tuning-data-composition"><ahref="https://arxiv.org/abs/2310.05492">How Abilities in Large LanguageModels are Affected by Supervised Fine-tuning Data Composition</a></h1><h3 id="本文研究了-llm-微调中的数据问题">本文研究了 LLM微调中的数据问题</h3><ul><li><h3id="随着数据量的增加数学推理代码生成和通用能力的性能变化趋势如何">随着数据量的增加，数学推理、代码生成和通用能力的性能变化趋势如何?</h3><img src="image.png" /><ul><li><h5id="少量高质量的sft数据足以在大型语言模型中激发一般人类对齐能力的出现">少量高质量的SFT数据足以在大型语言模型中激发一般人类对齐能力的出现。</h5></li></ul></li><li><h3 id="在-sft-阶段中将三种能力项数据直接混合是否会产生性能冲突">在SFT 阶段中，将三种能力项数据直接混合是否会产生性能冲突？</h3><img src="image-1.png" /><ul><li><h5id="数据量小时不同领域的数据能够互相促进">数据量小时不同领域的数据能够互相促进</h5></li><li><h5id="数据量大时不同领域的数据互相干扰">数据量大时不同领域的数据互相干扰</h5></li><li><h5id="数据量小时代码能力反而是模型越大提升越小">数据量小时代码能力反而是模型越大提升越小</h5></li></ul></li><li><h3id="什么是产生性能冲突的关键因素">什么是产生性能冲突的关键因素？</h3><ul><li><h5id="当通用数据和领域数据数学数据差异大时通用数据量对模型的领域能力影响不大">当通用数据和领域数据（数学数据）差异大时，通用数据量对模型的领域能力影响不大。</h5></li><li><h5id="当通用数据和领域数据代码数据差异小时通用数据量对模型的领域能力产生不同程度的负面影响">当通用数据和领域数据（代码数据）差异小时，通用数据量对模型的领域能力产生不同程度的负面影响。</h5></li></ul></li><li><h3id="不同的sft训练策略对数据组成的影响是什么">不同的SFT训练策略对数据组成的影响是什么？</h3><img src="image-2.png" /><ul><li><h5id="多任务学习保留了专门能力而对一般能力的伤害最大">多任务学习保留了专门能力，而对一般能力的伤害最大</h5></li><li><h5id="顺序训练和混合顺序训练保留了一般能力却损失了太多的专门能力">顺序训练和混合顺序训练保留了一般能力，却损失了太多的专门能力</h5></li><li><h5id="在对齐时加入一小部分领域数据能够防止灾难性遗忘">在对齐时加入一小部分领域数据能够防止灾难性遗忘</h5></li></ul></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2025-3-21</title>
     <link href="/2025/03/21/2025-3-21/"/>
     <url>/2025/03/21/2025-3-21/</url>
